@@ -1,4 +1,5 @@
 (ns projecteuler.core
+  (:use projecteuler.util)
   (:gen-class))
 
 (defn problem1
@@ -20,3 +21,14 @@
           (if (>= next x)
             res
             (recur b next (conj res next))))))))
+
+(defn problem3
+  "Find the largest prime factor on x."
+  [x]
+  (loop [value x
+         factor 2]
+    (if (>= factor value)
+      factor
+      (if (zero? (rem value factor))
+        (recur (/ value factor) factor)
+        (recur value (inc factor))))))
