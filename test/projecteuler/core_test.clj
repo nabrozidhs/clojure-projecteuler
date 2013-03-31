@@ -13,4 +13,8 @@
 
   (testing "Problem 3."
     (is (= 29 (problem3 13195)))
-    (is (= 6857 (problem3 600851475143)))))
+    (is (= 6857 (problem3 600851475143))))
+
+  (testing "Problem 4."
+    (is (= 9009 (problem4 2)))
+    (is (= 906609 (problem4 3)))))

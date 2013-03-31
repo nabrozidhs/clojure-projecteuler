@@ -32,3 +32,16 @@
       (if (zero? (rem value factor))
         (recur (/ value factor) factor)
         (recur value (inc factor))))))
+
+(defn problem4
+  "Largest palindrome from the product of x digits numbers."
+  [digits]
+  (let [numbers (range (- (int (Math/pow 10 digits)) 1)
+                       (- (int (Math/pow 10 (- digits 1))) 1) -1)]
+    (let [palindromes (filter #(is-palindrome? %) (range (* (first numbers) (first numbers))
+                                                         (* (last numbers) (last numbers)) -1))]
+      (loop [p palindromes]
+        (if (some true? (map #(and (zero? (rem (first p) %))
+                                   (>= (first numbers) (/ (first p) %))) numbers))
+          (first p)
+          (recur (rest p)))))))

@@ -1,6 +1,13 @@
 (ns projecteuler.util
   (:gen-class))
 
+(defn is-palindrome?
+  "Check if number is palindrome."
+  [n]
+  (let [s (seq (str n))]
+    (= s (reverse s))))
+
+
 (defn primes
   "Calculate primes less than x."
   [x]
