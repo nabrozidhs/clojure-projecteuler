@@ -45,3 +45,14 @@
                                    (>= (first numbers) (/ (first p) %))) numbers))
           (first p)
           (recur (rest p)))))))
+
+(defn problem5
+  "Smallest number that can be divided by range(n, 1, -1)."
+  [n]
+  (reduce lcm (range n 1 -1)))
+
+(defn problem6
+  "Sum square difference of the first range(1, x+1) numbers."
+  [x]
+  (- (int (Math/pow (reduce + (range 1 (+ x 1))) 2))
+    (sum-of-squares x)))

@@ -17,4 +17,11 @@
 
   (testing "Problem 4."
     (is (= 9009 (problem4 2)))
-    (is (= 906609 (problem4 3)))))
+    (is (= 906609 (problem4 3))))
+
+  (testing "Problem 5"
+    (is (= 2520 (problem5 10))))
+
+  (testing "Problem 6"
+    (is (= 2640 (problem6 10)))
+    (is (= 25164150 (problem6 100)))))
