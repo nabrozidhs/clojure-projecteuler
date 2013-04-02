@@ -4,8 +4,16 @@
 
 (deftest a-test
   (testing "Prime"
-    (is (= [1 2 3] (primes 3)))
-    (is (= [1 2 3 5 7] (primes 10))))
+    (is (= 2 (primes 1)))
+    (is (= 3 (primes 2)))
+    (is (= 5 (primes 3)))
+    (is (= 11 (primes 5))))
+
+  (testing "Is prime?"
+    (is (= true (is-prime? 1)))
+    (is (= true (is-prime? 2)))
+    (is (= true (is-prime? 3)))
+    (is (= false (is-prime? 4))))
 
   (testing "Is palindrome"
     (is (= true (is-palindrome? 11)))

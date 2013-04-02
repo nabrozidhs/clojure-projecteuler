@@ -20,18 +20,23 @@
   [a b]
   (/ (* a b) (gcd a b)))
 
+(defn is-prime?
+  "Check if n number is prime."
+  [n]
+  (cond
+    (= 1 n) true
+    (= 2 n) true
+    (zero? (rem n 2)) false
+    :else
+      (not-any? zero? (map #(rem n %) (range 3 (inc (int (Math/sqrt n))) 2)))))
+
 (defn primes
-  "Calculate primes less than x."
-  [x]
-  (loop [n 3
-         res [1 2]]
-    (let [m (int (Math/sqrt n))]
-      (if (< x n)
-        res
-        (let [possible-divisors (filter #(<= % m) (rest res))]
-          (if (some zero? (map #(rem n %) possible-divisors))
-            (recur (+ n 2) res)
-            (recur (+ n 2) (conj res n))))))))
+  "Calculate the nth prime number."
+  [n]
+  (cond
+    (= 1 n) 2
+    :else
+      (nth (filter #(is-prime? %) (iterate (partial + 2) 3)) (- n 2))))
 
 (defn sum-of-squares
   "Calculate the sum of range(1, x+1) squares."

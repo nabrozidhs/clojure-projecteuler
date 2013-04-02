@@ -56,3 +56,8 @@
   [x]
   (- (int (Math/pow (reduce + (range 1 (+ x 1))) 2))
     (sum-of-squares x)))
+
+(defn problem7
+  "Calculate the nth prime number."
+  [n]
+  (primes n))
