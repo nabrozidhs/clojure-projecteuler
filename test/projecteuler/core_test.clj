@@ -28,4 +28,8 @@
 
   (testing "Problem 7"
     (is (= 13 (problem7 6)))
-    (is (= 104743 (problem7 10001)))))
+    (is (= 104743 (problem7 10001))))
+
+  (testing "Problem 8"
+    (is (= 1 (problem8 "000990111110")))
+    (is (= 81 (problem8 "000991111110")))))

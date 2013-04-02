@@ -61,3 +61,8 @@
   "Calculate the nth prime number."
   [n]
   (primes n))
+
+(defn problem8
+  "Calculate greatest product of 5 consecutive digits in a big digit number (string input)"
+  [s]
+  (apply max (map #(apply * %) (partition 5 1 (map #(Integer/parseInt (str %)) (seq s))))))
