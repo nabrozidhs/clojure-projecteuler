@@ -40,4 +40,8 @@
     (is (= 31875000 (problem9 1000))))
 
   (testing "Problem 10"
-    (is (= 17 (problem10 10)))))
+    (is (= 17 (problem10 10))))
+
+  (testing "Problem 48"
+    (is (= "0405071317" (problem48 10)))
+    (is (= "9110846700" (problem48 1000)))))

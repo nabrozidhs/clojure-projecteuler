@@ -82,3 +82,8 @@
   "Find the sum of all the primes below n."
   [n]
   (reduce + (primes-below n)))
+
+(defn problem48
+  "Find the last ten digits of the series, 1^1 + 2^2 + 3^3 + ... + n^n."
+  [n]
+  (apply str (seq (take-last 10 (str (reduce + (map #(.pow (biginteger %) %) (range 1 (inc n)))))))))
