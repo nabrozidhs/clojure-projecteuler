@@ -9,7 +9,7 @@
 
   (testing "Problem 2."
     (is (= 10 (problem2 10)))
-    (is (= 4613732 (problem2 4000000))))
+    (is (= 4613732 (problem2 4E6))))
 
   (testing "Problem 3."
     (is (= 29 (problem3 13195)))
@@ -37,4 +37,7 @@
 
   (testing "Problem 9"
     (is (= 60 (problem9 12)))
-    (is (= 31875000 (problem9 1000)))))
+    (is (= 31875000 (problem9 1000))))
+
+  (testing "Problem 10"
+    (is (= 17 (problem10 10)))))

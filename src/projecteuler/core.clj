@@ -77,3 +77,8 @@
         (== n (+ a b c)) (int (* a b c))
         (> n (+ a b c)) (recur a (inc b))
         :else (recur (inc a) (+ a 2))))))
+
+(defn problem10
+  "Find the sum of all the primes below n."
+  [n]
+  (reduce + (primes-below n)))

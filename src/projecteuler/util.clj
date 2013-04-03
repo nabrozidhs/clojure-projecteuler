@@ -16,7 +16,7 @@
     :else   (recur a (- b a))))
 
 (defn lcm
-  "Least common multiple"
+  "Least common multiple."
   [a b]
   (/ (* a b) (gcd a b)))
 
@@ -37,6 +37,17 @@
     (= 1 n) 2
     :else
       (nth (filter #(is-prime? %) (iterate (partial + 2) 3)) (- n 2))))
+
+(defn primes-below
+  "Calculate the primes below n."
+  [n]
+  (loop [current 3
+         primes [2]]
+    (if (> current n)
+      primes
+      (if (is-prime? current)
+        (recur (+ current 2) (conj primes current))
+        (recur (+ current 2) primes)))))
 
 (defn sum-of-squares
   "Calculate the sum of range(1, x+1) squares."

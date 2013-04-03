@@ -9,6 +9,10 @@
     (is (= 5 (primes 3)))
     (is (= 11 (primes 5))))
 
+  (testing "Primes below"
+    (is (= [2 3 5 7] (primes-below 10)))
+    (is (= [2 3 5 7 11] (primes-below 12))))
+  
   (testing "Is prime?"
     (is (= true (is-prime? 1)))
     (is (= true (is-prime? 2)))
