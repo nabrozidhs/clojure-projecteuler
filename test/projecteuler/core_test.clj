@@ -20,7 +20,8 @@
     (is (= 906609 (problem4 3))))
 
   (testing "Problem 5"
-    (is (= 2520 (problem5 10))))
+    (is (= 2520 (problem5 10)))
+    (is (= 232792560 (problem5 20))))
 
   (testing "Problem 6"
     (is (= 2640 (problem6 10)))
@@ -32,4 +33,8 @@
 
   (testing "Problem 8"
     (is (= 1 (problem8 "000990111110")))
-    (is (= 81 (problem8 "000991111110")))))
+    (is (= 81 (problem8 "000991111110"))))
+
+  (testing "Problem 9"
+    (is (= 60 (problem9 12)))
+    (is (= 31875000 (problem9 1000)))))

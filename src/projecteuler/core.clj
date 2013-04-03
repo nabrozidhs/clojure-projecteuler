@@ -49,7 +49,7 @@
 (defn problem5
   "Smallest number that can be divided by range(n, 1, -1)."
   [n]
-  (reduce lcm (range n 1 -1)))
+  (reduce lcm (range 2 (inc n))))
 
 (defn problem6
   "Sum square difference of the first range(1, x+1) numbers."
@@ -66,3 +66,14 @@
   "Calculate greatest product of 5 consecutive digits in a big digit number (string input)"
   [s]
   (apply max (map #(apply * %) (partition 5 1 (map #(Integer/parseInt (str %)) (seq s))))))
+
+(defn problem9
+  "Find the product abc of the Pythagorean triplet for which a + b + c = n."
+  [n]
+  (loop [a 1
+         b 2]
+    (let [c (Math/sqrt (+ (* a a) (* b b)))]
+      (cond
+        (== n (+ a b c)) (int (* a b c))
+        (> n (+ a b c)) (recur a (inc b))
+        :else (recur (inc a) (+ a 2))))))
