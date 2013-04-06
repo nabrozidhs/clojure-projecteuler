@@ -42,6 +42,12 @@
   (testing "Problem 10"
     (is (= 17 (problem10 10))))
 
+  (testing "Problem 11"
+    (is (= 81 (problem11 [9 9 1 1 1 1 1 1 1 1 1 1 1 1 1 1])))
+    (is (= 81 (problem11 [1 1 1 9 1 1 1 9 1 1 1 1 1 1 1 1])))
+    (is (= 81 (problem11 [9 1 1 1 1 9 1 1 1 1 1 1 1 1 1 1])))
+    (is (= 81 (problem11 [1 1 1 9 1 1 9 1 1 1 1 1 1 1 1 1]))))
+  
   (testing "Problem 48"
     (is (= "0405071317" (problem48 10)))
     (is (= "9110846700" (problem48 1000)))))

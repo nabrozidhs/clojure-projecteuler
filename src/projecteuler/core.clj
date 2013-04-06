@@ -83,6 +83,32 @@
   [n]
   (reduce + (primes-below n)))
 
+(defn problem11
+  "Find the greatest product in four adjacent number in a square grid."
+  [grid]
+  (let [size (int (Math/sqrt (count grid)))]
+    (apply max
+      (map #(* (get grid (first %)) (get grid (second %)) (get grid (nth % 2)) (get grid (last %)))
+      (concat
+        ; Horizontal rows
+        (apply concat
+          (for [y (range 0 (count grid) size)]
+            (partition 4 1 (range y (+ y size)))))
+        ; Vertical rows
+        (apply concat
+          (for [x (range 0 size)]
+            (partition 4 1 (range x (count grid) size))))
+        ; Diagonal bottom left -> top right
+        (apply concat
+          (for [y (range 0 (- (count grid) (* 3 size)) size)]
+            (for [x (range 3 size)]
+              (take 4 (iterate (partial + (dec size)) (+ y x))))))
+        ; Diagonal top left -> bottom right
+        (apply concat
+          (for [y (range 0 (- (count grid) (* 3 size)) size)]
+            (for [x (range 0 (- size 3))]
+              (take 4 (iterate (partial + (inc size)) (+ y x)))))))))))
+
 (defn problem48
   "Find the last ten digits of the series, 1^1 + 2^2 + 3^3 + ... + n^n."
   [n]
