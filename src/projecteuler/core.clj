@@ -114,6 +114,11 @@
   [n]
   (first (filter #(<= n (divisors %)) triangular-numbers)))
 
+(defn problem13
+  "Return the first 10 digits of the sum of a list of integers."
+  [l]
+  (apply str (take 10 (str (reduce + (map #(bigint %) l))))))
+
 (defn problem48
   "Find the last ten digits of the series, 1^1 + 2^2 + 3^3 + ... + n^n."
   [n]
