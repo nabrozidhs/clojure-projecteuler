@@ -34,4 +34,8 @@
 
   (testing "Sum of squares"
     (is (= 5 (sum-of-squares 2)))
-    (is (= 385 (sum-of-squares 10)))))
+    (is (= 385 (sum-of-squares 10))))
+
+  (testing "Divisors"
+    (is (= 4 (divisors 10)))
+    (is (= 6 (divisors 28)))))

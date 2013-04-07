@@ -54,3 +54,12 @@
   [x]
   (reduce +
     (map #(int (Math/pow % 2)) (range 1 (+ x 1)))))
+
+(defn divisors
+  "Return the counter of divisors for number."
+  [number]
+  (* 2 (count (filter #(zero? (rem number %)) (range 1 (inc (int (Math/sqrt number))))))))
+
+(def triangular-numbers
+  "Return a lazy sequence of triangular numbers."
+  (map first (iterate (fn [[a b]] [(+ a b) (inc b)]) [1 2])))

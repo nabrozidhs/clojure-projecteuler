@@ -48,6 +48,10 @@
     (is (= 81 (problem11 [9 1 1 1 1 9 1 1 1 1 1 1 1 1 1 1])))
     (is (= 81 (problem11 [1 1 1 9 1 1 9 1 1 1 1 1 1 1 1 1]))))
   
+  (testing "Problem 12"
+    (is (= 6 (problem12 4)))
+    (is (= 28 (problem12 5))))
+
   (testing "Problem 48"
     (is (= "0405071317" (problem48 10)))
     (is (= "9110846700" (problem48 1000)))))

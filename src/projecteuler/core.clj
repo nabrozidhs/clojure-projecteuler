@@ -109,6 +109,11 @@
             (for [x (range 0 (- size 3))]
               (take 4 (iterate (partial + (inc size)) (+ y x)))))))))))
 
+(defn problem12
+  "Return the triangle number that has less than n divisors."
+  [n]
+  (first (filter #(<= n (divisors %)) triangular-numbers)))
+
 (defn problem48
   "Find the last ten digits of the series, 1^1 + 2^2 + 3^3 + ... + n^n."
   [n]
