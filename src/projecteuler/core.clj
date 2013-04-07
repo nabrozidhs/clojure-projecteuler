@@ -119,6 +119,20 @@
   [l]
   (apply str (take 10 (str (reduce + (map #(bigint %) l))))))
 
+(defn problem14
+  "Which starting number below n produces the longest chain."
+  [n]
+  (second (reduce #(if (> (first %1) (first %2)) %1 %2) (map
+    (fn [x]
+      (loop [i 1
+             n x]
+        (if (= 1 n)
+          [i x]
+          (if (even? n)
+            (recur (inc i) (quot n 2))
+            (recur (inc i) (inc (* 3 n)))))))
+    (range 1 n 2)))))
+
 (defn problem48
   "Find the last ten digits of the series, 1^1 + 2^2 + 3^3 + ... + n^n."
   [n]
