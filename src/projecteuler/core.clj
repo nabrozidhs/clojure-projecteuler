@@ -133,6 +133,11 @@
             (recur (inc i) (inc (* 3 n)))))))
     (range 1 n 2)))))
 
+(defn problem16
+  "Calculate the sum of the digits of the number 2^n."
+  [n]
+  (reduce + (map #(Integer/parseInt (str %)) (seq (str (.pow (biginteger 2) n))))))
+
 (defn problem48
   "Find the last ten digits of the series, 1^1 + 2^2 + 3^3 + ... + n^n."
   [n]

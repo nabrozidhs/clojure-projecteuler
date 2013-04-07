@@ -58,6 +58,10 @@
 
   (testing "Problem 14"
     (is (= 9 (problem14 10))))
+
+  (testing "Problem 16"
+    (is (= 26 (problem16 15)))
+    (is (= 1366 (problem16 1000))))
   
   (testing "Problem 48"
     (is (= "0405071317" (problem48 10)))
